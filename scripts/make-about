@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+. ./scripts/theme || exit
+
+echo ""
+echo -e "${PINK}${BOLD} About me...         ₍^. .^₎⟆  ⋆˙⟡ ⋆.˚ ⊹₊⟡ ⋆ . ݁₊ ⊹ . ݁˖ . ݁${RESET}"
+echo -e "${PINK}───────────────────────────────────────────────────────────────────────────${RESET}"
+echo ""
+
+echo -e "${PURP}${BOLD} ☆ Interests${RESET}"
+echo "  • Creative computing"
+echo "  • Networking"
+echo "  • Databases"
+echo "  • Theoretical computer science"
+echo "  • Type theory"
+echo "  • Classical & nonclassical logic"
+echo ""
+
+echo -e "${PURP}${BOLD} ☆ Currently learning${RESET}"
+echo "  • Full-stack web development"
+echo "  • Networking fundamentals"
+echo "  • Functional programming"
+echo ""
+
+echo -e "${PURP}${BOLD} ☆ Research${RESET}"
+echo "  • Explored the logical foundations of computer science,"
+echo "    focusing on how intuitionistic and constructive logic"
+echo "    can reshape undergraduate CS learning."
+echo ""
+echo "  • Investigated whether these frameworks provide a more "
+echo "    intuitive conceptual foundation and how they can be " 
+echo "    integrated into the curriculum."
+echo ""
+echo "  • Gained deeper understanding of lambda calculus and "
+echo "    the Curry–Howard correspondence through this work."
+echo ""
+echo -e "${BLUE}   ✦ Timeline: ${RESET}"
+echo "   • Summer Undergraduate Research Fellowship / Clare Boothe Luce Scholar, 2025"
+echo "   • Independent Study Course, Fall 2025"
+echo "   • Continuing as personal study while abroad, Spring 2026"
+
+
+
+

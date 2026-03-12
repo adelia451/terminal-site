@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+. ./scripts/theme || exit
+
+# Array
+# | adds a new column 
+readarray -t CONTACTS << "BANANA"
+Email|abarba1@trinity.edu
+LinkedIn|https://www.linkedin.com/in/ana-d-barba/|ana-d-barba
+PGP|822F B264 8571 968C
+BANANA
+
+echo -e ""
+echo -e "${PURP} ,-----.                 ,--.                  ,--.          ${RESET}"
+echo -e "${PURP}'  .--./ ,---. ,--,--, ,-'  '-. ,--,--. ,---.,-'  '-. ,---.  ${RESET}"
+echo -e "${PURP}|  |    | .-. ||      \'-.  .-'' ,-.  || .--''-.  .-'(  .-'  ${RESET}"
+echo -e "${PURP}'  '--'\' '-' '|  ||  |  |  |  \ '-'  |\ \`--.  |  |  .-'  \`) ${RESET}"
+echo -e "${PURP} \`-----' \`---' \`--' '--'  \`--' \`-- \`--' \`---'  \`--'  \`----'  ${RESET}"
+echo ""
+# 12 | 40
+echo -e "${BLUE}┌────────────┬─────────────────────────────────────────┐${RESET}"
+
+total=${#CONTACTS[@]}
+count=0
+# <<< here string, feeds a string directly into a command as input, reads from $line
+for line in "${CONTACTS[@]}"; do
+    count=$((count + 1))
+    IFS='|' read -r name value display <<< "$line"
+    if [[ -z "$display" ]]; then
+        #math syntax: $(())   # is length of
+        # * use next argument as width, %*s format string, get width from next argument
+        nSpace=$((12 - ${#name}))
+        vSpace=$((40 - ${#value}))
+        pSpace=$(printf '%*s' "$nSpace" '')
+        lSpace=$(printf '%*s' "$vSpace" '')
+        printf "${BLUE}|${RESET}${BOLD}%s${RESET}${pSpace}${BLUE}|${RESET} %s${lSpace}${BLUE}|${RESET}\n" "$name" "$value"
+    else
+        nSpace=$((12 - ${#name}))
+        dSpace=$((40 - ${#display}))
+        pSpace=$(printf '%*s' "$nSpace" '')
+        lSpace=$(printf '%*s' "$dSpace" '')
+        printf "${BLUE}|${RESET}${BOLD}%s${RESET}${pSpace}${BLUE}|${RESET} " "$name"
+        printf '\e]8;;%s\e\\%s\e]8;;\e\\' "$value" ${LINE}"$display"${RESET} #"$lSpace" not here bc its ignored
+        printf "%s${BLUE}|${RESET}\n" "$lSpace"
+    fi
+
+    if [[ $count -lt $total ]]; then
+    echo -e "${BLUE}├────────────┼─────────────────────────────────────────┤${RESET}"
+    fi
+done
+echo -e "${BLUE}└────────────┴─────────────────────────────────────────┘${RESET}"

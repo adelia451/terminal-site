@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+. ./scripts/theme || exit
+readarray -t CONTACTS << "BANANA"
+Email|abarba1@trinity.edu
+LinkedIn|https://www.linkedin.com/in/ana-d-barba/|ana-d-barba
+PGP|822F B264 8571 968C
+BANANA
+
+print_box() {
+  echo -e "${PURP}┌──────────────────────────────┐${RESET}"
+  echo -e "${PURP}│${RESET}  ${BOLD}$1${RESET}${PURP} │${RESET}"
+  echo -e "${PURP}└──────────────────────────────┘${RESET}"
+}
+
+clear
+echo ""
+
+print_box "Welcome to my terminal site"
+echo ""
+echo -e  "${PINK}${BOLD}· Name:    ${RESET}Ana"
+echo -e  "${PINK}${BOLD}· School:  ${RESET}Trinity University"
+echo -e  "${PINK}${BOLD}· Major:   ${RESET}Computer Science"
+echo -e  "${PINK}${BOLD}· Minor:   ${RESET}Spanish"
+echo -e  "${PINK}${BOLD}· Year:    ${RESET}Junior"
+printf "${PINK}${BOLD}· GitHub:  ${RESET}${LINE}\e]8;;https://github.com/adelia451\e\\ฅ^._.^ฅ\e]8;;\e\\${RESET}\n"
+echo -e ""
+echo -e "${PURP}─────────────────────────────────────────────${RESET}"
+echo -e ""
+echo -e "${BLUE}Type a command to explore...${RESET}"
+echo ""
+echo -e "${BLUE}Commands${RESET}"
+echo ""
+echo "contact     Contact list"
+echo "about       Learn about me"
+echo "clear       Clear screen"
+echo "exit        Quit CLI"
+echo ""
+
+while true; do
+
+  echo -ne "${PINK}ana${RESET}@${PURP}$(hostname)${RESET}:${PINK}~${RESET}$ "
+  read cmd
+
+  case "$cmd" in
+    home)
+      echo ""
+      print_box "Welcome to my terminal site"
+      echo ""
+      echo -e  "${PINK}${BOLD}· Name:    ${RESET}Ana"
+      echo -e  "${PINK}${BOLD}· School:  ${RESET}Trinity University"
+      echo -e  "${PINK}${BOLD}· Major:   ${RESET}Computer Science"
+      echo -e  "${PINK}${BOLD}· Minor:   ${RESET}Spanish"
+      echo -e  "${PINK}${BOLD}· Year:    ${RESET}Junior"
+      printf "${PINK}${BOLD}· GitHub:  ${RESET}${LINE}\e]8;;https://github.com/adelia451\e\\ฅ^._.^ฅ\e]8;;\e\\${RESET}\n"
+      echo -e ""
+      echo -e "${PURP}─────────────────────────────────────────────${RESET}"
+      echo -e ""
+      echo -e "${BLUE}Type a command to explore${RESET}"
+      echo ""
+      echo -e "${BLUE}Commands${RESET}"
+      echo "contact     Contact list"
+      echo "about       Learn about me"
+      echo "clear       Clear screen"
+      echo "exit        Quit CLI"
+      echo "home        Return here"
+      echo ""
+    ;;
+
+    contact)
+      echo ""
+      echo -e "${PURP} ,-----.                 ,--.                  ,--.          ${RESET}"
+      echo -e "${PURP}'  .--./ ,---. ,--,--, ,-'  '-. ,--,--. ,---.,-'  '-. ,---.  ${RESET}"
+      echo -e "${PURP}|  |    | .-. ||      \'-.  .-'' ,-.  || .--''-.  .-'(  .-'  ${RESET}"
+      echo -e "${PURP}'  '--'\' '-' '|  ||  |  |  |  \ '-'  |\ \`--.  |  |  .-'  \`) ${RESET}"
+      echo -e "${PURP} \`-----' \`---' \`--' '--'  \`--' \`-- \`--' \`---'  \`--'  \`----'  ${RESET}"
+      echo ""
+      # 12 | 40
+      echo -e "${BLUE}┌────────────┬─────────────────────────────────────────┐${RESET}"
+
+      total=${#CONTACTS[@]}
+      count=0
+      # <<< here string, feeds a string directly into a command as input, reads from $line
+      for line in "${CONTACTS[@]}"; do
+          count=$((count + 1))
+          IFS='|' read -r name value display <<< "$line"
+          if [[ -z "$display" ]]; then
+              #math syntax: $(())   # is length of
+              # * use next argument as width, %*s format string, get width from next argument
+              nSpace=$((12 - ${#name}))
+              vSpace=$((40 - ${#value}))
+              pSpace=$(printf '%*s' "$nSpace" '')
+              lSpace=$(printf '%*s' "$vSpace" '')
+              printf "${BLUE}|${RESET}${BOLD}%s${RESET}${pSpace}${BLUE}|${RESET} %s${lSpace}${BLUE}|${RESET}\n" "$name" "$value"
+          else
+              nSpace=$((12 - ${#name}))
+              dSpace=$((40 - ${#display}))
+              pSpace=$(printf '%*s' "$nSpace" '')
+              lSpace=$(printf '%*s' "$dSpace" '')
+              printf "${BLUE}|${RESET}${BOLD}%s${RESET}${pSpace}${BLUE}|${RESET} " "$name"
+              printf '\e]8;;%s\e\\%s\e]8;;\e\\' "$value" ${LINE}"$display"${RESET} #"$lSpace" not here bc its ignored
+              printf "%s${BLUE}|${RESET}\n" "$lSpace"
+          fi
+
+          if [[ $count -lt $total ]]; then
+          echo -e "${BLUE}├────────────┼─────────────────────────────────────────┤${RESET}"
+          fi
+      done
+      echo -e "${BLUE}└────────────┴─────────────────────────────────────────┘${RESET}"
+      echo ""
+      ;;
+
+    about)
+      echo ""
+      echo -e "${PINK}${BOLD} About me...         ₍^. .^₎⟆  ⋆˙⟡ ⋆.˚ ⊹₊⟡ ⋆ . ݁₊ ⊹ . ݁˖ . ݁${RESET}"
+      echo -e "${PINK}───────────────────────────────────────────────────────────────────────────${RESET}"
+      echo ""
+
+      echo -e "${PURP}${BOLD} ☆ Interests${RESET}"
+      echo "  • Creative computing"
+      echo "  • Networking"
+      echo "  • Databases"
+      echo "  • Theoretical computer science"
+      echo "  • Type theory"
+      echo "  • Classical & nonclassical logic"
+      echo ""
+
+      echo -e "${PURP}${BOLD} ☆ Currently learning${RESET}"
+      echo "  • Full-stack web development"
+      echo "  • Networking fundamentals"
+      echo "  • Functional programming"
+      echo ""
+
+      echo -e "${PURP}${BOLD} ☆ Research${RESET}"
+      echo "  • Explored the logical foundations of computer science,"
+      echo "    focusing on how intuitionistic and constructive logic"
+      echo "    can reshape undergraduate CS learning."
+      echo ""
+      echo "  • Investigated whether these frameworks provide a more "
+      echo "    intuitive conceptual foundation and how they can be " 
+      echo "    integrated into the curriculum."
+      echo ""
+      echo "  • Gained deeper understanding of lambda calculus and "
+      echo "    the Curry–Howard correspondence through this work."
+      echo ""
+      echo -e "${BLUE}   ✦ Timeline: ${RESET}"
+      echo "   • Summer Undergraduate Research Fellowship / Clare Boothe Luce Scholar, 2025"
+      echo "   • Independent Study Course, Fall 2025"
+      echo "   • Continuing as personal study while abroad, Spring 2026"
+      echo ""
+      ;;
+
+    clear)
+      clear
+      ;;
+
+    exit)
+      echo ""
+      echo "Bye bye~!"
+      echo ""
+      break
+      ;;
+
+    "")
+      ;;
+
+    *)
+      echo "Unknown command. Type 'home', 'contact', 'about', or 'exit'."
+      ;;
+
+  esac
+
+done

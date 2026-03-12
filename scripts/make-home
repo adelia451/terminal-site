@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+. ./scripts/theme || exit
+
+print_box() {
+  echo -e "${PURP}┌──────────────────────────────┐${RESET}"
+  echo -e "${PURP}│${RESET}  ${BOLD}$1${RESET}${PURP} │${RESET}"
+  echo -e "${PURP}└──────────────────────────────┘${RESET}"
+}
+
+echo ""
+print_box "Welcome to my terminal site"
+echo ""
+echo -e  "${PINK}${BOLD}· Name:    ${RESET}Ana"
+echo -e  "${PINK}${BOLD}· School:  ${RESET}Trinity University"
+echo -e  "${PINK}${BOLD}· Major:   ${RESET}Computer Science"
+echo -e  "${PINK}${BOLD}· Minor:   ${RESET}Spanish"
+echo -e  "${PINK}${BOLD}· Year:    ${RESET}Junior"
+printf "${PINK}${BOLD}· GitHub:  ${RESET}${LINE}\e]8;;https://github.com/adelia451\e\\ฅ^._.^ฅ\e]8;;\e\\${RESET}\n"
+echo ""
+echo -e "${PURP}─────────────────────────────────────────────${RESET}"
+echo -e ""
+echo -e "${BLUE}  PAGES${RESET}"
+echo ""
+echo -e "${BLUE}\$${RESET} curl ana.sh/contacts   ${BLUE}Get in touch${RESET}"
+echo -e "${BLUE}\$${RESET} curl ana.sh/about      ${BLUE}Learn about me${RESET}"
+echo ""
+echo -e "${PURP}─────────────────────────────────────────────${RESET}"
+echo ""
+echo -e "${PINK} Interactive CLI: ${RESET}curl ana.sh/install | bash"
+echo ""
+
