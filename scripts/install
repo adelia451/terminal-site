@@ -46,7 +46,7 @@ echo ""
 while true; do
 
   echo -ne "${PINK}ana${RESET}@${PURP}$(hostname)${RESET}:${PINK}~${RESET}$ "
-  read cmd
+  read cmd < /dev/tty
 
   case "$cmd" in
     home)
