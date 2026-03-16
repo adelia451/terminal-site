@@ -171,7 +171,7 @@ while true; do
       ;;
 
     *)
-      echo "Unknown command. Type 'home', 'contact', 'about', or 'exit'."
+      echo "Unknown command (ó﹏ò｡). Type 'home', 'contact', 'about', or 'exit'."
       ;;
 
   esac

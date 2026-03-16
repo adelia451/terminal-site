@@ -26,6 +26,12 @@ echo -e "${BLUE}\$${RESET} curl mimobox.sh/about      ${BLUE}Learn about me${RES
 echo ""
 echo -e "${PURP}─────────────────────────────────────────────${RESET}"
 echo ""
-echo -e "${PINK} Interactive CLI: ${RESET}curl mimobox.sh/install | bash"
+print_box "    Interactive CLI:       "
+echo ""
+echo -e "${BLUE}\$${RESET}${PINK} curl mimobox.sh/install | bash${RESET}"
+echo ""
+echo -e "${BLUE}TO CHECK SCRIPT BEFORE INSTALLING : ${RESET}"
+echo ""
+echo -e "${BLUE}\$${RESET} curl mimobox.sh/install"
 echo ""
 
