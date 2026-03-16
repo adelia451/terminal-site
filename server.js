@@ -40,7 +40,7 @@ app.use((req, res) => {
   Available pages:
 
   $ curl mimobox.sh
-  $ curl mimobox.sh/aboutme
+  $ curl mimobox.sh/about
   $ curl mimobox.sh/contacts
   $ curl mimobox.sh/install | bash
 
