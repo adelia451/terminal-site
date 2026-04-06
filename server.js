@@ -47,5 +47,5 @@ app.use((req, res) => {
     `)
   })
 
-app.listen(80, () => console.log('running on port 80'))
+app.listen(3001, () => console.log('running on port 3001'))
 // changed all script files to lf, this ones crlf

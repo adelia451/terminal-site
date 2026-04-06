@@ -18,7 +18,7 @@ echo ""
 echo -e "${PURP}${BOLD} ☆ Currently learning${RESET}"
 echo "  • Full-stack web development"
 echo "  • Networking fundamentals"
-echo "  • Functional programming"
+echo "  • Functional programming"m
 echo ""
 
 echo -e "${PURP}${BOLD} ☆ Research${RESET}"
