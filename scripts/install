@@ -28,7 +28,7 @@ echo -e  "${PINK}${BOLD}· Name:    ${RESET}Ana"
 echo -e  "${PINK}${BOLD}· School:  ${RESET}Trinity University"
 echo -e  "${PINK}${BOLD}· Major:   ${RESET}Computer Science"
 echo -e  "${PINK}${BOLD}· Minor:   ${RESET}Spanish"
-echo -e  "${PINK}${BOLD}· Year:    ${RESET}Junior"
+echo -e  "${PINK}${BOLD}· Year:    ${RESET}Senior"
 printf "${PINK}${BOLD}· GitHub:  ${RESET}${LINE}\e]8;;https://github.com/adelia451\e\\ฅ^._.^ฅ\e]8;;\e\\${RESET}\n"
 echo -e ""
 echo -e "${PURP}─────────────────────────────────────────────${RESET}"
@@ -57,7 +57,7 @@ while true; do
       echo -e  "${PINK}${BOLD}· School:  ${RESET}Trinity University"
       echo -e  "${PINK}${BOLD}· Major:   ${RESET}Computer Science"
       echo -e  "${PINK}${BOLD}· Minor:   ${RESET}Spanish"
-      echo -e  "${PINK}${BOLD}· Year:    ${RESET}Junior"
+      echo -e  "${PINK}${BOLD}· Year:    ${RESET}Senior"
       printf "${PINK}${BOLD}· GitHub:  ${RESET}${LINE}\e]8;;https://github.com/adelia451\e\\ฅ^._.^ฅ\e]8;;\e\\${RESET}\n"
       echo -e ""
       echo -e "${PURP}─────────────────────────────────────────────${RESET}"
@@ -124,6 +124,7 @@ while true; do
 
       echo -e "${PURP}${BOLD} ☆ Interests${RESET}"
       echo "  • Creative computing"
+      echo "  • Web development"
       echo "  • Networking"
       echo "  • Databases"
       echo "  • Theoretical computer science"
@@ -132,8 +133,7 @@ while true; do
       echo ""
 
       echo -e "${PURP}${BOLD} ☆ Currently learning${RESET}"
-      echo "  • Full-stack web development"
-      echo "  • Networking fundamentals"
+      echo "  • Graphics"
       echo "  • Functional programming"
       echo ""
 
@@ -152,7 +152,8 @@ while true; do
       echo -e "${BLUE}   ✦ Timeline: ${RESET}"
       echo "   • Summer Undergraduate Research Fellowship / Clare Boothe Luce Scholar, 2025"
       echo "   • Independent Study Course, Fall 2025"
-      echo "   • Continuing as personal study while abroad, Spring 2026"
+      echo "   • Continued as personal study while abroad, Spring 2026"
+      echo "   • Special Topics in Theory Course, Fall 2026"
       echo ""
       ;;
 
